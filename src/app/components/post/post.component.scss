@@ -1,0 +1,51 @@
+:host {
+    display: flex;
+    color: #282828;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 2px -1px #fff;
+
+    &.open {    
+        h2 {
+            color: #27ae60;
+        }
+    }
+
+    h2 {
+        font-size: 16px;
+
+        &:hover {
+            color: #27ae60;
+        }
+    }
+
+    p, .score {
+        font-size: 14px;
+    }
+
+    .author {
+        margin-top: 10px;
+        font-style: italic;
+    }
+
+    .content {
+        width: 100%;
+        margin: 10px;
+        word-break: break-word;
+    }
+
+    .karma {
+        margin: 10px 5px;
+        text-align: center;
+
+        img {
+            width: 30px;
+            display: block;
+        }
+    }
+
+    .text {
+        margin-top: 20px;
+    }
+}
+
+

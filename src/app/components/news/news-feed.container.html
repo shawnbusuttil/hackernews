@@ -1,0 +1,16 @@
+<div class="news-feed">
+    <ng-container *ngIf="posts.length; else loading">
+        <hn-post *ngFor="let post of posts; let i = index" [post]="post" (click)="post.isActive = !post.isActive"
+            [class.open]="post.isActive" class="fadein"></hn-post>
+    </ng-container>
+    <ng-template #loading>
+        <div class="placeholder" *ngFor="let placeholder of placeholders"></div>
+    </ng-template>
+</div>
+
+<div class="news-state">
+    <hn-spinner *ngIf="isLoading"></hn-spinner>
+    
+    <p *ngIf="posts.length && posts.length >= ids.length">There doesn't seem to be any more posts.</p>
+    <button *ngIf="posts.length && posts.length < ids.length && !isLoading" (click)="loadMorePosts()">Load More</button>
+</div>
